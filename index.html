@@ -1,1 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peperoncino | Authentic Italian Restaurant in Pefkos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        logo: ['Pacifico', 'cursive'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#e53e3e',
+                            green: '#48bb78',
+                            dark: '#2d3748'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 antialiased">
 
+    <header class="fixed w-full bg-white/95 backdrop-blur shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="font-logo text-3xl text-brand-green">Peperoncino</a>
+            <nav class="hidden md:flex space-x-8 font-semibold text-gray-600">
+                <a href="#about" class="hover:text-brand-red transition">Nuestra Filosofía</a>
+                <a href="#menu" class="hover:text-brand-red transition">Menú</a>
+                <a href="#reviews" class="hover:text-brand-red transition">Reseñas</a>
+            </nav>
+            <a href="#book" class="bg-brand-red text-white px-6 py-2 rounded-full font-bold hover:bg-red-700 transition shadow-lg">
+                Book a Table
+            </a>
+        </div>
+    </header>
+
+    <section class="pt-32 pb-20 px-4 bg-brand-dark text-white text-center" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;">
+        <div class="max-w-4xl mx-auto mt-16 mb-16">
+            <h1 class="font-logo text-5xl md:text-7xl text-brand-green mb-6">Authentic Italian Flavors</h1>
+            <p class="text-xl md:text-2xl font-light mb-10">Experience the true taste of Italy in the heart of Pefkos.</p>
+            <div class="flex justify-center gap-4">
+                <a href="#menu" class="bg-white text-brand-dark px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">View Menu</a>
+                <a href="#book" class="bg-brand-red text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition">Reserve Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 px-4 max-w-6xl mx-auto text-center">
+        <h2 class="font-logo text-4xl text-brand-red mb-12">Our Philosophy</h2>
+        <div class="grid md:grid-cols-2 gap-12 text-left">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                <h3 class="text-2xl font-bold mb-4 text-brand-green">Artisan Pasta</h3>
+                <p class="text-gray-600 leading-relaxed">Considered to be one of our main specialties and is strictly made on site using traditional techniques. Our pasta is extruded using bronze dies producing a porous texture which absorbs the great flavours of the dish.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                <h3 class="text-2xl font-bold mb-4 text-brand-green">24h Fermented Pizza</h3>
+                <p class="text-gray-600 leading-relaxed">Enjoy a lightweight, thin and crispy base thanks to the slow and natural rising over a period of 24 hours. We prepare it using only the finest Italian flour for an unforgettable taste.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-20 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-logo text-4xl text-brand-red mb-12 text-center">Our Menu</h2>
+            
+            <h3 class="text-3xl border-b-2 border-brand-green pb-2 mb-8 mt-12 font-semibold">Le Pizze</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold text-lg">Margherita</h4>
+                        <span class="font-bold text-brand-red">12,00€</span>
+                    </div>
+                    <p class="text-sm text-gray-500 italic">tomato, mozzarella, basil [cite: 6]</p>
+                </div>
+                <div>
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold text-lg">Diavola</h4>
+                        <span class="font-bold text-brand-red">15,00€</span>
+                    </div>
+                    <p class="text-sm text-gray-500 italic">tomato, mozzarella, spicy salami</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-sm text-gray-400 mb-4">* All our dishes are made fresh to order. Thank you for your patience during busy times[cite: 79].</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="font-logo text-4xl text-brand-red mb-12">What Our Guests Say</h2>
+            <div class="grid md:grid-cols-3 gap-6 text-left">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="text-yellow-400 mb-2">★★★★★</div>
+                    <p class="text-gray-600 mb-4">"The mushroom and truffle topping was amazing! Nothing was too much trouble for the staff."</p>
+                    <p class="font-bold text-sm">- Polly</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="text-yellow-400 mb-2">★★★★★</div>
+                    <p class="text-gray-600 mb-4">"Authentic Italian in Greece. The 24h fermented pizza crust is the best I've had on the island."</p>
+                    <p class="font-bold text-sm">- Mark T.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="text-yellow-400 mb-2">★★★★★</div>
+                    <p class="text-gray-600 mb-4">"Great atmosphere and the homemade pasta is out of this world. Highly recommended!"</p>
+                    <p class="font-bold text-sm">- Sarah W.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="book" class="py-20 px-4 bg-brand-dark text-white">
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="font-logo text-4xl text-brand-green mb-6">Find Us</h2>
+                <p class="mb-2"><strong>Address:</strong> Main Road, Pefkos 85107, Rhodes</p>
+                <p class="mb-2"><strong>Phone:</strong> +30 2244048244</p>
+                <p class="mb-8"><strong>Email:</strong> info@peperoncino.gr</p>
+                
+                <a href="https://wa.me/+306945375124" class="inline-flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-full font-bold hover:bg-green-600 transition">
+                    Message us on WhatsApp
+                </a>
+            </div>
+            
+            <div class="bg-white text-gray-800 p-8 rounded-2xl">
+                <h3 class="text-2xl font-bold mb-6 text-center">Request a Table</h3>
+                <form class="space-y-4">
+                    <input type="text" placeholder="Your Name *" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green outline-none">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="number" placeholder="Guests *" min="1" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green outline-none">
+                        <input type="tel" placeholder="Mobile / WhatsApp *" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green outline-none">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="date" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green outline-none">
+                        <input type="time" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green outline-none">
+                    </div>
+                    <button type="submit" class="w-full bg-brand-red text-white py-3 rounded-lg font-bold hover:bg-red-700 transition mt-4">
+                        Confirm Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-6 text-center text-sm">
+        <p>&copy; 2026 Peperoncino. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
