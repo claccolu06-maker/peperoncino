@@ -25,6 +25,13 @@
             }
         }
     </script>
+    <style>
+        /* Animación suave para cuando se expanden las tarjetas */
+        .menu-expandable {
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 antialiased">
 
@@ -62,7 +69,7 @@
             </div>
             <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                 <h3 class="text-2xl font-bold mb-4 text-brand-green">24h Fermented Pizza</h3>
-                <p class="text-gray-600 leading-relaxed">Enjoy a lightweight, thin and crispy base thanks to the slow and natural rising over a period of 24 hours. We prepare it using exclusively Italian flour and fresh, seasonally selected ingredients for an unforgettable taste.</p>
+                <p class="text-gray-600 leading-relaxed">Enjoy a lightweight, thin and crispy base thanks to the slow and natural rising over a period of 24 hours. We prepare it using exclusively Italian flour and fresh, seasonally selected ingredients.</p>
             </div>
         </div>
     </section>
@@ -70,268 +77,116 @@
     <section id="menu" class="py-20 px-4 bg-white">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="font-logo text-4xl text-brand-red mb-4">Our Menus</h2>
-            <p class="text-gray-500 mb-6 italic">Click on any card to display our selection natively below</p>
-            <p class="text-sm text-gray-400 mb-12 max-w-2xl mx-auto">As all our dishes are made fresh to order, we kindly ask our customers for patience during busy times. Your wait is rewarded with rigorous quality.</p>
+            <p class="text-gray-500 mb-12 italic">Click on any card to reveal the menu inside</p>
             
-            <div class="grid md:grid-cols-3 gap-8 items-center mb-16">
+            <div class="grid md:grid-cols-3 gap-8 items-start mb-16 text-left">
                 
-                <button id="tab-drinks" onclick="switchMenu('drinks')" class="menu-tab text-center bg-gray-50 rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition duration-300 transform hover:-translate-y-1 block w-full outline-none">
-                    <div class="h-40 bg-gray-200 rounded-xl mb-4 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Desserts" class="w-full h-full object-cover">
+                <div class="bg-gray-50 rounded-2xl shadow-md border border-gray-200 overflow-hidden transition-all duration-300">
+                    <button onclick="toggleCard('wine-card')" class="w-full text-center p-6 outline-none hover:bg-gray-100 transition flex flex-col items-center group">
+                        <div class="h-40 w-full bg-gray-200 rounded-xl mb-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Wine List" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <h3 class="font-logo text-2xl text-brand-dark mb-2">Wine List</h3>
+                        <p class="text-gray-500 text-xs px-2 mb-4">Click to expand our curated collection of fine Italian & Greek wines.</p>
+                        <span class="inline-block bg-brand-green text-white text-xs font-bold py-2 px-6 rounded-full shadow-md">Open Menu ▼</span>
+                    </button>
+                    
+                    <div id="wine-card" class="menu-expandable hidden px-6 pb-6 border-t border-gray-200 pt-6">
+                        <h4 class="font-bold text-brand-red mb-4 border-b pb-2">House Wines Selection</h4>
+                        <ul class="space-y-4 mb-6">
+                            <li><div class="flex justify-between font-bold"><span>White, Red or Rosé</span><span>15,00€ / LT</span></div><p class="text-xs text-gray-500">Glass 4,00€ / Half Litre 8,00€</p></li>
+                            <li><div class="flex justify-between font-bold"><span>Rosalia Rosé</span><span>19,00€ / BOT</span></div><p class="text-xs text-gray-500">Premium Label (Glass 4,50€)</p></li>
+                        </ul>
+                        <h4 class="font-bold text-brand-red mb-4 border-b pb-2">Premium Bottles</h4>
+                        <ul class="space-y-4">
+                            <li><div class="flex justify-between font-bold"><span>Prosecco Veneto</span><span>25,00€</span></div></li>
+                            <li><div class="flex justify-between font-bold"><span>Nero D'Avola (Sicilia)</span><span>22,00€</span></div></li>
+                            <li><div class="flex justify-between font-bold"><span>Syrah (Sicilia)</span><span>22,00€</span></div></li>
+                            <li><div class="flex justify-between font-bold"><span>Nebbiolo (Piemonte)</span><span>30,00€</span></div></li>
+                            <li><div class="flex justify-between font-bold"><span>Chianti Classico</span><span>32,00€</span></div></li>
+                            <li><div class="flex justify-between font-bold"><span>Barbera D'Asti</span><span>35,00€</span></div></li>
+                        </ul>
+                        <button onclick="toggleCard('wine-card')" class="w-full text-center text-sm font-bold text-gray-400 mt-6 pt-4 border-t hover:text-brand-red">Close ▲</button>
                     </div>
-                    <h3 class="font-logo text-2xl text-brand-dark mb-2">Dolci & Drinks</h3>
-                    <p class="text-gray-500 text-xs px-2 mb-4">Sweet Italian treats, homemade tiramisu, refreshing cocktails, and digestifs.</p>
-                    <span class="inline-block bg-gray-200 text-gray-700 text-xs font-bold py-2 px-6 rounded-full">Select Menu</span>
-                </button>
+                </div>
 
-                <button id="tab-food" onclick="switchMenu('food')" class="menu-tab text-center bg-white rounded-2xl shadow-2xl border-2 border-brand-red/20 p-8 transform md:-translate-y-4 hover:-translate-y-5 transition duration-300 block w-full relative z-10 outline-none">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-red text-white px-6 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">
-                        Main Selection
-                    </div>
-                    <div class="h-48 bg-gray-200 rounded-xl mb-4 overflow-hidden mt-2">
-                        <img src="https://images.unsplash.com/photo-1498579150354-97947de1d3b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Food Menu" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="font-logo text-3xl text-brand-red mb-2">Food Menu</h3>
-                    <p class="text-gray-600 text-xs px-4 mb-4">Our famous 24h fermented artisan pizzas, traditional bronze-die pastas, and main courses.</p>
-                    <span class="inline-block bg-brand-red text-white text-xs font-bold py-2 px-8 rounded-full shadow-md">Active Selection</span>
-                </button>
+                <div class="bg-white rounded-2xl shadow-xl border-2 border-brand-red/20 overflow-hidden transition-all duration-300 md:-translate-y-4">
+                    <button onclick="toggleCard('food-card')" class="w-full text-center p-8 outline-none hover:bg-gray-50 transition flex flex-col items-center group relative">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-red text-white px-6 py-1 rounded-full text-xs font-bold uppercase shadow-md">Main Selection</div>
+                        <div class="h-48 w-full bg-gray-200 rounded-xl mb-4 overflow-hidden relative mt-2">
+                            <img src="https://images.unsplash.com/photo-1498579150354-97947de1d3b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Food Menu" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <h3 class="font-logo text-3xl text-brand-red mb-2">Food Menu</h3>
+                        <p class="text-gray-600 text-xs px-4 mb-4">Click to expand our famous 24h fermented pizzas and artisan pastas.</p>
+                        <span class="inline-block bg-brand-red text-white text-xs font-bold py-2 px-8 rounded-full shadow-md">Open Menu ▼</span>
+                    </button>
 
-                <button id="tab-wine" onclick="switchMenu('wine')" class="menu-tab text-center bg-gray-50 rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition duration-300 transform hover:-translate-y-1 block w-full outline-none">
-                    <div class="h-40 bg-gray-200 rounded-xl mb-4 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Wine List" class="w-full h-full object-cover">
+                    <div id="food-card" class="menu-expandable hidden px-8 pb-8 border-t border-gray-200 pt-6">
+                        <h4 class="font-bold text-brand-green mb-4 border-b pb-2">Le Pizze</h4>
+                        <ul class="space-y-4 mb-8">
+                            <li><div class="flex justify-between font-bold"><span>Margherita</span><span>12,00€</span></div><p class="text-xs text-gray-500">tomato, mozzarella, basil</p></li>
+                            <li><div class="flex justify-between font-bold"><span>Romana</span><span>13,00€</span></div><p class="text-xs text-gray-500">tomato, mozzarella, anchovies, capers, olives</p></li>
+                            <li><div class="flex justify-between font-bold"><span>Prosciutto</span><span>14,00€</span></div><p class="text-xs text-gray-500">tomato, mozzarella, ham</p></li>
+                            <li><div class="flex justify-between font-bold"><span>Norma</span><span>15,00€</span></div><p class="text-xs text-gray-500">tomato, eggplant, sicilian ricotta, basil</p></li>
+                            <li><div class="flex justify-between font-bold"><span>Boscaiola</span><span>16,00€</span></div><p class="text-xs text-gray-500">mozzarella, cream, mushroom, parma, truffle</p></li>
+                            <li><div class="flex justify-between font-bold"><span>Frutti di Mare</span><span>20,00€</span></div><p class="text-xs text-gray-500">sea food, capers, parsley</p></li>
+                        </ul>
+                        <h4 class="font-bold text-brand-green mb-4 border-b pb-2">Primi Piatti (Pasta)</h4>
+                        <ul class="space-y-4 mb-8">
+                            <li><div class="flex justify-between font-bold"><span>Tagliolini Boscaiola</span><span>16,00€</span></div><p class="text-xs text-gray-500">mushrooms, parma ham, cream</p></li>
+                            <li><div class="flex justify-between font-bold"><span>Maccheroncini Norma</span><span>16,00€</span></div><p class="text-xs text-gray-500">fried eggplant, sicilian baked ricotta</p></li>
+                            <li><div class="flex justify-between font-bold"><span>Tagliatelle Tonno</span><span>16,00€</span></div><p class="text-xs text-gray-500">tuna, cherry tomato, olives, capers</p></li>
+                        </ul>
+                        <h4 class="font-bold text-brand-green mb-4 border-b pb-2">Secondi</h4>
+                        <ul class="space-y-4">
+                            <li><div class="flex justify-between font-bold"><span>Filetto di Manzo</span><span>32,00€</span></div><p class="text-xs text-gray-500">beef fillet carpaccio / steak</p></li>
+                            <li><div class="flex justify-between font-bold"><span>Tartare di Salmone</span><span>16,00€</span></div><p class="text-xs text-gray-500">salmon tartare, capers, pine nuts</p></li>
+                        </ul>
+                        <button onclick="toggleCard('food-card')" class="w-full text-center text-sm font-bold text-gray-400 mt-6 pt-4 border-t hover:text-brand-red">Close ▲</button>
                     </div>
-                    <h3 class="font-logo text-2xl text-brand-dark mb-2">Wine List</h3>
-                    <p class="text-gray-500 text-xs px-2 mb-4">A curated collection of fine Italian regional wines and local organic Greek labels.</p>
-                    <span class="inline-block bg-gray-200 text-gray-700 text-xs font-bold py-2 px-6 rounded-full">Select Menu</span>
-                </button>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl shadow-md border border-gray-200 overflow-hidden transition-all duration-300">
+                    <button onclick="toggleCard('drinks-card')" class="w-full text-center p-6 outline-none hover:bg-gray-100 transition flex flex-col items-center group">
+                        <div class="h-40 w-full bg-gray-200 rounded-xl mb-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Desserts" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <h3 class="font-logo text-2xl text-brand-dark mb-2">Dolci & Drinks</h3>
+                        <p class="text-gray-500 text-xs px-2 mb-4">Click to expand our Aperitifs, classic Italian cocktails and Desserts.</p>
+                        <span class="inline-block bg-brand-green text-white text-xs font-bold py-2 px-6 rounded-full shadow-md">Open Menu ▼</span>
+                    </button>
+
+                    <div id="drinks-card" class="menu-expandable hidden px-6 pb-6 border-t border-gray-200 pt-6">
+                        <h4 class="font-bold text-brand-red mb-4 border-b pb-2">Aperitivi / Cocktails</h4>
+                        <ul class="space-y-4 mb-6">
+                            <li><div class="flex justify-between font-bold"><span>Mimosa</span><span>9,00€</span></div><p class="text-xs text-gray-500">orange and prosecco wine</p></li>
+                            <li><div class="flex justify-between font-bold"><span>Bellini</span><span>9,00€</span></div><p class="text-xs text-gray-500">peach and prosecco wine</p></li>
+                            <li><div class="flex justify-between font-bold"><span>Rossini</span><span>9,00€</span></div><p class="text-xs text-gray-500">strawberry and prosecco wine</p></li>
+                            <li><div class="flex justify-between font-bold"><span>Aperol Spritz</span><span>9,00€</span></div><p class="text-xs text-gray-500">aperol, white wine and prosecco</p></li>
+                            <li><div class="flex justify-between font-bold"><span>Campari and Soda</span><span>9,00€</span></div></li>
+                        </ul>
+                        <h4 class="font-bold text-brand-red mb-4 border-b pb-2">I Dolci / Desserts</h4>
+                        <ul class="space-y-4">
+                            <li><div class="flex justify-between font-bold"><span>Classic Tiramisù</span><span>7,00€</span></div><p class="text-xs text-gray-500">Savoiardi, mascarpone, espresso</p></li>
+                            <li><div class="flex justify-between font-bold"><span>Panna Cotta</span><span>6,00€</span></div><p class="text-xs text-gray-500">Vanilla bean, mixed fruit coulis</p></li>
+                            <li><div class="flex justify-between font-bold"><span>Limoncello Chilled Shot</span><span>4,00€</span></div><p class="text-xs text-gray-500">Traditional Italian lemon liqueur</p></li>
+                        </ul>
+                        <button onclick="toggleCard('drinks-card')" class="w-full text-center text-sm font-bold text-gray-400 mt-6 pt-4 border-t hover:text-brand-red">Close ▲</button>
+                    </div>
+                </div>
 
             </div>
-
-            <div id="menu-food" class="menu-content text-left max-w-5xl mx-auto transition-opacity duration-300">
-                <h3 class="font-logo text-3xl border-b-2 border-brand-green pb-2 mb-8 text-brand-dark">Le Pizze (24h Fermentation)</h3>
-                <div class="grid md:grid-cols-2 gap-8 mb-12">
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Margherita</h4><span class="font-bold text-brand-red">12,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">tomato, mozzarella, basil</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Romana</h4><span class="font-bold text-brand-red">13,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">tomato, mozzarella, anchovies, capers, olives, oregano</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Prosciutto</h4><span class="font-bold text-brand-red">14,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">tomato, mozzarella, premium cooked ham</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Funghi</h4><span class="font-bold text-brand-red">14,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">tomato, mozzarella, handpicked fresh mushrooms</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Vegetariana</h4><span class="font-bold text-brand-red">15,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">tomato, mozzarella, grilled courgettes, eggplants, roasted peppers, onions</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Norma</h4><span class="font-bold text-brand-red">15,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">tomato, mozzarella, fried eggplants, authentic baked Sicilian ricotta cheese, basil</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">4 Formaggi</h4><span class="font-bold text-brand-red">15,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">mozzarella, rich gorgonzola, aged parmesan, edam</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Calzone Ripieno</h4><span class="font-bold text-brand-red">15,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">folded pizza with tomato, mozzarella, fresh mushrooms, ham</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Boscaiola</h4><span class="font-bold text-brand-red">16,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">mozzarella, heavy cream, mushrooms, aged parma ham, premium white truffle oil</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Frutti di Mare</h4><span class="font-bold text-brand-red">20,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">tomato, light mozzarella, fresh local seafood selection, wild capers, parsley</p>
-                    </div>
-                </div>
-
-                <h3 class="font-logo text-3xl border-b-2 border-brand-green pb-2 mb-8 mt-12 text-brand-dark">Primi Piatti (Artisan Bronze-Die Pasta)</h3>
-                <div class="grid md:grid-cols-2 gap-8 mb-12">
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Tagliolini Aglio, Olio e Peperoncino</h4><span class="font-bold text-brand-red">12,00€</span></div>
-                        <p class="text-sm text-gray-500">extra virgin olive oil, garlic, fresh chili peppers, cherry tomatoes, parsley, parmesan</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Tagliolini Carbonara</h4><span class="font-bold text-brand-red">15,00€</span></div>
-                        <p class="text-sm text-gray-500">crispy Italian guanciale, pasteurized egg yolk, pecorino romano, cracked black pepper</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Tagliolini alla Boscaiola</h4><span class="font-bold text-brand-red">16,00€</span></div>
-                        <p class="text-sm text-gray-500">wild mushrooms mix, sautéed parma ham strips, touch of white wine and premium kitchen cream</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Caserecce al Salmone e Asparagi</h4><span class="font-bold text-brand-red">18,00€</span></div>
-                        <p class="text-sm text-gray-500">pan-seared fresh salmon chunks, tender asparagus spears, light pink sauce, aromatic pink pepper</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Gnocchi con Gamberi e Tartufo</h4><span class="font-bold text-brand-red">20,00€</span></div>
-                        <p class="text-sm text-gray-500">potato gnocchi, local prawns, delicate parmesan cream sauce, saffron threads, shaved black truffle</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Ravioli di Pesce</h4><span class="font-bold text-brand-red">20,00€</span></div>
-                        <p class="text-sm text-gray-500">hand-stuffed fish ravioli tossed with pan-fried zucchini ribbons, rock shrimps, sweet cherry tomatoes</p>
-                    </div>
-                </div>
-
-                <h3 class="font-logo text-3xl border-b-2 border-brand-green pb-2 mb-8 mt-12 text-brand-dark">Secondi / Main Courses</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Filetto di Manzo</h4><span class="font-bold text-brand-red">32,00€</span></div>
-                        <p class="text-sm text-gray-500">prime grilled beef fillet steak served with your choice of green peppercorn, gorgonzola, or porcini mushroom reduction sauce</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Braciola di Maiale al Forno</h4><span class="font-bold text-brand-red">18,00€</span></div>
-                        <p class="text-sm text-gray-500">tender pork chop marinated in aged soy sauce, Greek honey, and wild rosemary, slow-baked in our stone oven</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Filetto di Salmone al Forno</h4><span class="font-bold text-brand-red">20,00€</span></div>
-                        <p class="text-sm text-gray-500">oven-baked Mediterranean salmon fillet garnished with Kalamata olives, wild capers, and a fresh garden side salad</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Gamberoni al Peperoncino</h4><span class="font-bold text-brand-red">25,00€</span></div>
-                        <p class="text-sm text-gray-500">jumbo king prawns pan-fried in extra virgin olive oil with minced garlic, fresh red chilis, deglazed with crisp white wine</p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="menu-wine" class="menu-content text-left max-w-5xl mx-auto hidden transition-opacity duration-300">
-                <h3 class="font-logo text-3xl border-b-2 border-brand-green pb-2 mb-8 text-brand-dark">House Wines Selection</h3>
-                <div class="grid md:grid-cols-3 gap-8 mb-12">
-                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
-                        <h4 class="font-bold text-lg text-brand-dark mb-2">Peperoncino Bianco</h4>
-                        <div class="flex justify-between text-sm text-gray-600"><span>Glass (GLS):</span><span class="font-bold text-brand-red">4,00€</span></div>
-                        <div class="flex justify-between text-sm text-gray-600"><span>1/2 Litre (LT):</span><span class="font-bold text-brand-red">8,00€</span></div>
-                        <div class="flex justify-between text-sm text-gray-600"><span>1 Litre (LT):</span><span class="font-bold text-brand-red">15,00€</span></div>
-                    </div>
-                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
-                        <h4 class="font-bold text-lg text-brand-dark mb-2">Peperoncino Rosso</h4>
-                        <div class="flex justify-between text-sm text-gray-600"><span>Glass (GLS):</span><span class="font-bold text-brand-red">4,00€</span></div>
-                        <div class="flex justify-between text-sm text-gray-600"><span>1/2 Litre (LT):</span><span class="font-bold text-brand-red">8,00€</span></div>
-                        <div class="flex justify-between text-sm text-gray-600"><span>1 Litre (LT):</span><span class="font-bold text-brand-red">15,00€</span></div>
-                    </div>
-                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
-                        <h4 class="font-bold text-lg text-brand-dark mb-2">Peperoncino Rosé</h4>
-                        <div class="flex justify-between text-sm text-gray-600"><span>Glass (GLS):</span><span class="font-bold text-brand-red">4,00€</span></div>
-                        <div class="flex justify-between text-sm text-gray-600"><span>1/2 Litre (LT):</span><span class="font-bold text-brand-red">8,00€</span></div>
-                        <div class="flex justify-between text-sm text-gray-600"><span>1 Litre (LT):</span><span class="font-bold text-brand-red">15,00€</span></div>
-                    </div>
-                </div>
-
-                <h3 class="font-logo text-3xl border-b-2 border-brand-green pb-2 mb-8 text-brand-dark">Premium Bottles From Italy & Greece</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Rosalia Rosé (Premium Label)</h4><span class="font-bold text-brand-red">GLS 4,50€ / BOT 19,00€</span></div>
-                        <p class="text-sm text-gray-500">Crisp, refreshing profile with elegant notes of red forest berries and wild flowers.</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Prosecco D.O.C. Veneto</h4><span class="font-bold text-brand-red">25,00€</span></div>
-                        <p class="text-sm text-gray-500">Fine and persistent bubbles, fruity bouquet featuring green apples and white peach notes.</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Nero d'Avola (Sicilia)</h4><span class="font-bold text-brand-red">22,00€</span></div>
-                        <p class="text-sm text-gray-500">Full-bodied red wine with deep flavors of ripe plum, dark chocolate, and spicy nuances.</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Syrah I.G.T. (Sicilia)</h4><span class="font-bold text-brand-red">22,00€</span></div>
-                        <p class="text-sm text-gray-500">Rich red wine displaying bold profiles of black pepper, dark berries, and a smoky oak finish.</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Frappato Certified Organic (Sicilia)</h4><span class="font-bold text-brand-red">22,00€</span></div>
-                        <p class="text-sm text-gray-500">Light and extraordinarily lively red wine bursting with sweet aromas of fresh strawberries.</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Nebbiolo D.O.C. (Piemonte)</h4><span class="font-bold text-brand-red">30,00€</span></div>
-                        <p class="text-sm text-gray-500">Elegant red with complex structure, presenting aromas of dried roses, leather, and licorice.</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Chianti Classico Riserva (Toscana)</h4><span class="font-bold text-brand-red">32,00€</span></div>
-                        <p class="text-sm text-gray-500">Traditional Tuscan Sangiovese aged in oak, showcasing tart cherry flavors and earthy tannins.</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Barbera d'Asti Superiore (Piemonte)</h4><span class="font-bold text-brand-red">35,00€</span></div>
-                        <p class="text-sm text-gray-500">Deep purple hue, high vibrant acidity paired perfectly with rich black cherry fruit layers.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="menu-drinks" class="menu-content text-left max-w-5xl mx-auto hidden transition-opacity duration-300">
-                <h3 class="font-logo text-3xl border-b-2 border-brand-green pb-2 mb-8 text-brand-dark">Artisan Desserts / Dolci</h3>
-                <div class="grid md:grid-cols-2 gap-8 mb-12">
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Homemade Classic Tiramisu</h4><span class="font-bold text-brand-red">7,00€</span></div>
-                        <p class="text-sm text-gray-500">Layers of rich Italian savoiardi biscuits soaked in strong espresso, velvety whipped mascarpone cream, dark cocoa dust.</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Vanilla Bean Panna Cotta</h4><span class="font-bold text-brand-red">6,00€</span></div>
-                        <p class="text-sm text-gray-500">Traditional silky cooked cream dessert served with an artisan forest fruit coulis or wild mountain honey reduction.</p>
-                    </div>
-                </div>
-
-                <h3 class="font-logo text-3xl border-b-2 border-brand-green pb-2 mb-8 text-brand-dark">Italian Digestifs & Cocktails</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Chilled Limoncello shot</h4><span class="font-bold text-brand-red">4,00€</span></div>
-                        <p class="text-sm text-gray-500">Traditional sweet lemon liquor served ice-cold from the freezer.</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Aperol Spritz Veneziano</h4><span class="font-bold text-brand-red">8,00€</span></div>
-                        <p class="text-sm text-gray-500">The ultimate refreshing summer classic: Prosecco, Aperol, splash of soda water, fresh orange slice.</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Classic Negroni</h4><span class="font-bold text-brand-red">9,00€</span></div>
-                        <p class="text-sm text-gray-500">Equal parts of dry London gin, red sweet Vermouth, and Campari Bitter over artisanal ice block.</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1"><h4 class="font-bold text-lg">Espresso Italiano</h4><span class="font-bold text-brand-red">2,50€</span></div>
-                        <p class="text-sm text-gray-500">Intense, freshly ground premium dark roast arabica beans.</p>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
     <script>
-        function switchMenu(category) {
-            // Ocultar todas las secciones de platos
-            document.querySelectorAll('.menu-content').forEach(el => el.classList.add('hidden'));
-            // Mostrar únicamente la sección seleccionada
-            document.getElementById('menu-' + category).classList.remove('hidden');
-            
-            // Restablecer estilos visuales pasivos de las 3 tarjetas superiores
-            document.querySelectorAll('.menu-tab').forEach(el => {
-                el.classList.remove('border-2', 'border-brand-red/20', 'scale-105', 'shadow-2xl', 'bg-white', 'md:-translate-y-4');
-                el.classList.add('bg-gray-50', 'scale-100', 'shadow-sm', 'border-gray-100');
-                
-                // Cambiar el estilo de los botones decorativos dentro de las pestañas inactivas
-                const indicator = el.querySelector('span');
-                if (indicator) {
-                    indicator.textContent = 'Select Menu';
-                    indicator.className = 'inline-block bg-gray-200 text-gray-700 text-xs font-bold py-2 px-6 rounded-full';
-                }
-            });
-            
-            // Aplicar estilo de pestaña activa/destacada a la tarjeta seleccionada
-            const activeTab = document.getElementById('tab-' + category);
-            activeTab.classList.remove('bg-gray-50', 'scale-100', 'shadow-sm', 'border-gray-100');
-            
-            if (category === 'food') {
-                activeTab.classList.add('bg-white', 'shadow-2xl', 'border-2', 'border-brand-red/20', 'md:-translate-y-4');
-                const badge = activeTab.querySelector('span');
-                badge.textContent = 'Active Selection';
-                badge.className = 'inline-block bg-brand-red text-white text-xs font-bold py-2 px-8 rounded-full shadow-md';
+        function toggleCard(cardId) {
+            const content = document.getElementById(cardId);
+            // Alternar la clase 'hidden'
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
             } else {
-                activeTab.classList.add('bg-white', 'shadow-2xl', 'border-2', 'border-brand-green/30', 'md:-translate-y-4');
-                const badge = activeTab.querySelector('span');
-                badge.textContent = 'Active Selection';
-                badge.className = 'inline-block bg-brand-green text-white text-xs font-bold py-2 px-8 rounded-full shadow-md';
+                content.classList.add('hidden');
             }
         }
     </script>
@@ -339,35 +194,24 @@
     <section id="reviews" class="py-20 px-4 bg-gray-50 overflow-hidden">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="font-logo text-4xl text-brand-red mb-12">What Our Guests Say</h2>
-            
             <div id="review-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8" style="-ms-overflow-style: none; scrollbar-width: none;">
                 <style>#review-carousel::-webkit-scrollbar { display: none; }</style>
-
                 <div class="snap-center shrink-0 w-80 md:w-1/3 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                     <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
                     <p class="text-gray-600 mb-6 italic">"I saw this on TripAdvisor so I took the advice to book. The mixed bruschetta for starters was huge and amazing! The mushroom and truffle topping was spectacular."</p>
                     <p class="font-bold text-brand-dark">- Polly</p>
                 </div>
-
                 <div class="snap-center shrink-0 w-80 md:w-1/3 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                     <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
                     <p class="text-gray-600 mb-6 italic">"Authentic Italian in Greece. The 24h fermented pizza crust is lightweight and crispy, the best I've had on the island during our holiday."</p>
                     <p class="font-bold text-brand-dark">- Mark T.</p>
                 </div>
-
                 <div class="snap-center shrink-0 w-80 md:w-1/3 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                     <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
                     <p class="text-gray-600 mb-6 italic">"Great atmosphere and the homemade artisan pasta is out of this world. Excellent hospitality, they gave us limoncello on the house!"</p>
                     <p class="font-bold text-brand-dark">- Sarah W.</p>
                 </div>
-                
-                <div class="snap-center shrink-0 w-80 md:w-1/3 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
-                    <p class="text-gray-600 mb-6 italic">"Amazing dinner in Pefkos. Authentic ingredients, great wine selection, and the tiramisu was the perfect end to our night."</p>
-                    <p class="font-bold text-brand-dark">- David L.</p>
-                </div>
             </div>
-
             <script>
                 const carousel = document.getElementById('review-carousel');
                 setInterval(() => {
@@ -383,7 +227,6 @@
 
     <section id="book" class="py-24 px-4 bg-brand-dark">
         <div class="max-w-6xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
-            
             <div class="md:w-5/12 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
                 <div class="absolute inset-0 bg-brand-dark/85 backdrop-blur-sm"></div>
                 <div class="relative h-full flex flex-col justify-between p-10 text-white min-h-[300px]">
@@ -398,53 +241,48 @@
                     </div>
                 </div>
             </div>
-
             <div class="md:w-7/12 p-8 md:p-12">
                 <h3 class="text-3xl font-bold mb-6 text-brand-dark border-b-2 border-brand-green pb-2 inline-block">Request a Table</h3>
-                
                 <form class="space-y-5 mt-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
                             <label class="block text-sm font-semibold text-gray-600 mb-1">Full Name *</label>
-                            <input type="text" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition">
+                            <input type="text" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green outline-none">
                         </div>
                         <div>
                             <label class="block text-sm font-semibold text-gray-600 mb-1">Email Address *</label>
-                            <input type="email" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition">
+                            <input type="email" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green outline-none">
                         </div>
                         <div>
                             <label class="block text-sm font-semibold text-gray-600 mb-1">Mobile / WhatsApp *</label>
-                            <input type="tel" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition">
+                            <input type="tel" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green outline-none">
                         </div>
                         <div>
                             <label class="block text-sm font-semibold text-gray-600 mb-1">Number of Guests *</label>
-                            <input type="number" min="1" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition">
+                            <input type="number" min="1" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green outline-none">
                         </div>
                         <div>
                             <label class="block text-sm font-semibold text-gray-600 mb-1">Date *</label>
-                            <input type="date" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition text-gray-500">
+                            <input type="date" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green outline-none">
                         </div>
                         <div>
                             <label class="block text-sm font-semibold text-gray-600 mb-1">Time *</label>
-                            <input type="time" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition text-gray-500">
+                            <input type="time" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green outline-none">
                         </div>
                     </div>
-
                     <div>
                         <label class="block text-sm font-semibold text-gray-600 mb-1">Seating Preference</label>
-                        <select class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition text-gray-600">
+                        <select class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green outline-none">
                             <option>Outdoor / Terrace</option>
                             <option>Indoor</option>
                             <option>No Preference</option>
                         </select>
                     </div>
-
                     <div>
                         <label class="block text-sm font-semibold text-gray-600 mb-1">Special Requests / Allergies</label>
-                        <textarea rows="2" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition" placeholder="Let us know if you have any dietary restrictions, allergies or special occasions..."></textarea>
+                        <textarea rows="2" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green outline-none" placeholder="Let us know..."></textarea>
                     </div>
-
-                    <button type="button" onclick="alert('In a real setup, this form processes the request via an API or Email. For instant booking, use WhatsApp!')" class="w-full bg-brand-red text-white py-4 rounded-xl font-bold text-lg hover:bg-red-700 hover:shadow-lg transition mt-2">
+                    <button type="button" class="w-full bg-brand-red text-white py-4 rounded-xl font-bold text-lg hover:bg-red-700 transition mt-2">
                         Confirm Reservation Request
                     </button>
                 </form>
@@ -453,10 +291,7 @@
     </section>
 
     <footer class="bg-gray-900 text-gray-400 py-6 text-center text-sm">
-        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p>&copy; 2026 Peperoncino. All rights reserved.</p>
-            <p class="text-xs text-gray-600">Designed via GitHub Pages Optimization Task.</p>
-        </div>
+        <p>&copy; 2026 Peperoncino. All rights reserved.</p>
     </footer>
 
 </body>
