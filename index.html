@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Authentic Italian Restaurant in Pefkos. Experience artisan pasta and 24h fermented pizza.">
     <title>Peperoncino | Authentic Italian Restaurant in Pefkos</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
@@ -30,10 +33,10 @@
 
     <header class="fixed w-full bg-white/95 backdrop-blur shadow-sm z-50">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="font-logo text-3xl text-brand-green">Peperoncino</a>
-            <nav class="hidden md:flex space-x-8 font-semibold text-gray-600">
+            <a href="#" class="font-logo text-3xl text-brand-green" aria-label="Peperoncino Home">Peperoncino</a>
+            <nav class="hidden md:flex space-x-8 font-semibold text-gray-600" aria-label="Main Navigation">
                 <a href="#about" class="hover:text-brand-red transition">Philosophy</a>
-                <a href="#menus" class="hover:text-brand-red transition">Menus</a>
+                <a href="#menu" class="hover:text-brand-red transition">Menus</a>
                 <a href="#reviews" class="hover:text-brand-red transition">Reviews</a>
             </nav>
             <a href="#book" class="bg-brand-red text-white px-6 py-2 rounded-full font-bold hover:bg-red-700 transition shadow-lg">
@@ -42,259 +45,179 @@
         </div>
     </header>
 
-    <section id="hero" class="relative pt-32 pb-20 px-4 flex items-center justify-center min-h-[85vh] text-center" style="background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.75)), url('OIP.jpeg') center/cover no-repeat;">
-        <div class="max-w-4xl mx-auto mt-16 mb-16 relative z-10">
-            <h1 class="font-logo text-6xl md:text-8xl text-brand-green mb-6 drop-shadow-lg">Rustic Italian Restaurant</h1>
-            <p class="text-xl md:text-2xl font-light mb-10 text-gray-200 drop-shadow-md">Experience the true taste of Italy in the heart of Pefkos.</p>
-            <div class="flex justify-center gap-4">
-                <a href="#menus" class="bg-white/90 backdrop-blur text-brand-dark px-8 py-3 rounded-full font-bold hover:bg-white transition shadow-lg">View Menus</a>
-                <a href="#book" class="bg-brand-red text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition shadow-lg">Reserve Now</a>
+    <main>
+        <section id="hero" class="relative pt-32 pb-20 px-4 flex items-center justify-center min-h-[85vh] text-center" style="background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.75)), url('OIP.jpeg') center/cover no-repeat;">
+            <div class="max-w-4xl mx-auto mt-16 mb-16 relative z-10">
+                <h1 class="font-logo text-6xl md:text-8xl text-brand-green mb-6 drop-shadow-lg">Rustic Italian Restaurant</h1>
+                <p class="text-xl md:text-2xl font-light mb-10 text-gray-200 drop-shadow-md">Experience the true taste of Italy in the heart of Pefkos.</p>
+                <div class="flex justify-center gap-4">
+                    <a href="#menu" class="bg-white/90 backdrop-blur text-brand-dark px-8 py-3 rounded-full font-bold hover:bg-white transition shadow-lg">View Menus</a>
+                    <a href="#book" class="bg-brand-red text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition shadow-lg">Reserve Now</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="py-20 px-4 max-w-6xl mx-auto text-center">
-        <h2 class="font-logo text-4xl text-brand-red mb-12">Our Philosophy</h2>
-        <div class="grid md:grid-cols-2 gap-12 text-left">
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                <h3 class="text-2xl font-bold mb-4 text-brand-green">Artisan Pasta</h3>
-                <p class="text-gray-600 leading-relaxed">Considered to be one of our main specialties and is strictly made on site using traditional techniques. Our pasta is made from the finest durum wheat, free range eggs and extruded using bronze dies producing a porous texture which absorbs the great flavours of the dish.</p>
+        <section id="about" class="py-20 px-4 max-w-6xl mx-auto text-center">
+            <h2 class="font-logo text-4xl text-brand-red mb-12">Our Philosophy</h2>
+            <div class="grid md:grid-cols-2 gap-12 text-left">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-2xl font-bold mb-4 text-brand-green">Artisan Pasta</h3>
+                    <p class="text-gray-600 leading-relaxed">Considered to be one of our main specialties and is strictly made on site using traditional techniques. Our pasta is made from the finest durum wheat, free range eggs and extruded using bronze dies producing a porous texture which absorbs the great flavours of the dish.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-2xl font-bold mb-4 text-brand-green">24h Fermented Pizza</h3>
+                    <p class="text-gray-600 leading-relaxed">Enjoy a lightweight, thin and crispy base thanks to the slow and natural rising over a period of 24 hours. We prepare it using exclusively Italian flour and fresh, seasonally selected ingredients for an unforgettable taste.</p>
+                </div>
             </div>
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                <h3 class="text-2xl font-bold mb-4 text-brand-green">24h Fermented Pizza</h3>
-                <p class="text-gray-600 leading-relaxed">Enjoy a lightweight, thin and crispy base thanks to the slow and natural rising over a period of 24 hours. We prepare it using exclusively Italian flour and fresh, seasonally selected ingredients for an unforgettable taste.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="menus" class="pt-20 px-4 bg-white">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="font-logo text-4xl text-brand-red mb-4">Our Menus</h2>
-            <p class="text-gray-500 mb-6 italic">Select a category below to explore our authentic flavors</p>
-            
-            <div class="grid md:grid-cols-3 gap-8 items-center mb-16">
+        <section id="menu" class="py-20 px-4 bg-white">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="font-logo text-4xl text-brand-red mb-4">Our Menus</h2>
+                <p class="text-gray-500 mb-6 italic">Discover our authentic selections</p>
+                <p class="text-sm text-gray-400 mb-16 max-w-2xl mx-auto">As all our dishes are made fresh to order, we kindly ask our customers for patience during busy times. Your wait is rewarded with rigorous quality.</p>
                 
-                <div onclick="showMenu('menu-drinks')" class="cursor-pointer bg-gray-50 rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
-                    <div class="h-48 bg-gray-200 rounded-xl mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Desserts" class="w-full h-full object-cover">
+                <div class="grid md:grid-cols-3 gap-8 items-center">
+                    
+                    <div class="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="h-48 bg-gray-200 rounded-xl mb-6 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Delicious homemade Italian desserts" loading="lazy" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-logo text-3xl text-brand-dark mb-3">Dolci & Drinks</h3>
+                        <p class="text-gray-600 mb-6 text-sm px-2">Sweet Italian treats, homemade tiramisu, refreshing cocktails, and traditional digestifs to conclude your dinner.</p>
+                        <a href="menu_drinks.pdf" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-brand-green text-brand-green font-bold py-2 px-8 rounded-full hover:bg-brand-green hover:text-white transition">View Drinks</a>
                     </div>
-                    <h3 class="font-logo text-3xl text-brand-dark mb-3">Dolci & Drinks</h3>
-                    <p class="text-gray-600 mb-6 text-sm px-2">Sweet Italian treats, homemade tiramisu, and traditional digestifs.</p>
-                    <span class="inline-block border-2 border-brand-green text-brand-green font-bold py-2 px-8 rounded-full transition">View Drinks</span>
-                </div>
 
-                <div onclick="showMenu('menu-food')" class="cursor-pointer bg-white rounded-2xl shadow-2xl border-2 border-brand-red/10 p-8 transform md:-translate-y-6 hover:-translate-y-8 transition duration-300 relative z-10">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-red text-white px-6 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">
-                        Main Selection
+                    <div class="bg-white rounded-2xl shadow-2xl border-2 border-brand-red/10 p-8 transform md:-translate-y-6 hover:-translate-y-8 transition duration-300 relative z-10">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-red text-white px-6 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">
+                            Main Selection
+                        </div>
+                        <div class="h-56 bg-gray-200 rounded-xl mb-6 overflow-hidden mt-2">
+                            <img src="https://images.unsplash.com/photo-1498579150354-97947de1d3b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gourmet Italian Food Plate" loading="lazy" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-logo text-4xl text-brand-red mb-3">Food Menu</h3>
+                        <p class="text-gray-600 mb-8 px-4">Our famous 24h fermented artisan pizzas, traditional bronze-die pastas, and premium selection of meat and fresh seafood.</p>
+                        <a href="menu_food.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-red text-white font-bold py-3 px-10 rounded-full hover:bg-red-700 transition shadow-lg w-full text-center">Explore Food</a>
                     </div>
-                    <div class="h-56 bg-gray-200 rounded-xl mb-6 overflow-hidden mt-2">
-                        <img src="https://images.unsplash.com/photo-1498579150354-97947de1d3b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Food Menu" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="font-logo text-4xl text-brand-red mb-3">Food Menu</h3>
-                    <p class="text-gray-600 mb-8 px-4">Our famous 24h fermented pizzas and traditional bronze-die pastas.</p>
-                    <span class="inline-block bg-brand-red text-white font-bold py-3 px-10 rounded-full transition shadow-lg w-full text-center">Explore Food</span>
-                </div>
 
-                <div onclick="showMenu('menu-wine')" class="cursor-pointer bg-gray-50 rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
-                    <div class="h-48 bg-gray-200 rounded-xl mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Wine List" class="w-full h-full object-cover">
+                    <div class="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="h-48 bg-gray-200 rounded-xl mb-6 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Glasses of Italian Wine" loading="lazy" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-logo text-3xl text-brand-dark mb-3">Wine List</h3>
+                        <p class="text-gray-600 mb-6 text-sm px-2">A curated collection of fine Italian regional wines and local Greek labels paired carefully to enhance your meal.</p>
+                        <a href="menu_vini.pdf" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-brand-green text-brand-green font-bold py-2 px-8 rounded-full hover:bg-brand-green hover:text-white transition">Wine List</a>
                     </div>
-                    <h3 class="font-logo text-3xl text-brand-dark mb-3">Wine List</h3>
-                    <p class="text-gray-600 mb-6 text-sm px-2">A curated collection of fine Italian regional wines and local Greek labels.</p>
-                    <span class="inline-block border-2 border-brand-green text-brand-green font-bold py-2 px-8 rounded-full transition">Wine List</span>
-                </div>
 
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="interactive-menu" class="pb-20 px-4 bg-white scroll-mt-24">
-        <div class="max-w-5xl mx-auto bg-gray-50 p-8 md:p-12 rounded-3xl border border-gray-100 shadow-inner">
-            
-            <div id="menu-food" class="menu-section block transition-opacity duration-500">
-                <div class="text-center mb-10">
-                    <h3 class="font-logo text-5xl text-brand-red mb-4">Food Menu</h3>
-                    <p class="text-sm text-gray-500 italic">As all our dishes are made fresh to order, we kindly ask for your patience.</p>
-                </div>
+        <section id="reviews" class="py-20 px-4 bg-gray-50 overflow-hidden">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="font-logo text-4xl text-brand-red mb-12">What Our Guests Say</h2>
                 
-                <h4 class="text-2xl font-bold border-b-2 border-brand-green pb-2 mb-6 text-brand-dark">Le Pizze</h4>
-                <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
-                    <div>
-                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Margherita</span><span class="font-bold text-brand-red">12,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">tomato, mozzarella, basil</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Romana</span><span class="font-bold text-brand-red">13,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">tomato, mozzarella, anchovies, capers, olives, oregano</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Prosciutto</span><span class="font-bold text-brand-red">14,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">tomato, mozzarella, ham</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Funghi</span><span class="font-bold text-brand-red">14,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">tomato, mozzarella, fresh mushrooms</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Vegetariana</span><span class="font-bold text-brand-red">15,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">tomatoes, mozzarella, courgette, eggplant, peppers, onions</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">4 Formaggi</span><span class="font-bold text-brand-red">15,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">mozzarella, gorgonzola, parmesan, edam</p>
-                    </div>
-                </div>
+                <div id="review-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8" style="-ms-overflow-style: none; scrollbar-width: none;">
+                    <style>#review-carousel::-webkit-scrollbar { display: none; }</style>
 
-                <h4 class="text-2xl font-bold border-b-2 border-brand-green pb-2 mb-6 text-brand-dark mt-8">Pasta Artigianale</h4>
-                <div class="grid md:grid-cols-2 gap-x-12 gap-y-6">
-                    <div>
-                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Tagliolini Aglio, Olio e Peperoncino</span><span class="font-bold text-brand-red">12,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">tomato, garlic, chili, parmesan</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Tagliolini Carbonara</span><span class="font-bold text-brand-red">15,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">guanciale, egg, pecorino romano, black pepper</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Gnocchi con Gamberi e Tartufo</span><span class="font-bold text-brand-red">20,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">prawns, parmesan cream, saffron, truffle</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Ravioli di Pesce</span><span class="font-bold text-brand-red">20,00€</span></div>
-                        <p class="text-sm text-gray-500 italic">fish ravioli with zucchini, shrimps, cherry tomato</p>
-                    </div>
+                    <article class="snap-center shrink-0 w-80 md:w-1/3 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="text-yellow-400 mb-4 text-xl" aria-label="5 stars">★★★★★</div>
+                        <p class="text-gray-600 mb-6 italic">"I saw this on TripAdvisor so I took the advice to book. The mixed bruschetta for starters was huge and amazing! The mushroom and truffle topping was spectacular."</p>
+                        <p class="font-bold text-brand-dark">- Polly</p>
+                    </article>
+
+                    <article class="snap-center shrink-0 w-80 md:w-1/3 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="text-yellow-400 mb-4 text-xl" aria-label="5 stars">★★★★★</div>
+                        <p class="text-gray-600 mb-6 italic">"Authentic Italian in Greece. The 24h fermented pizza crust is lightweight and crispy, the best I've had on the island during our holiday."</p>
+                        <p class="font-bold text-brand-dark">- Mark T.</p>
+                    </article>
+
+                    <article class="snap-center shrink-0 w-80 md:w-1/3 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="text-yellow-400 mb-4 text-xl" aria-label="5 stars">★★★★★</div>
+                        <p class="text-gray-600 mb-6 italic">"Great atmosphere and the homemade artisan pasta is out of this world. Excellent hospitality, they gave us limoncello on the house!"</p>
+                        <p class="font-bold text-brand-dark">- Sarah W.</p>
+                    </article>
+                    
+                    <article class="snap-center shrink-0 w-80 md:w-1/3 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="text-yellow-400 mb-4 text-xl" aria-label="5 stars">★★★★★</div>
+                        <p class="text-gray-600 mb-6 italic">"Amazing dinner in Pefkos. Authentic ingredients, great wine selection, and the tiramisu was the perfect end to our night."</p>
+                        <p class="font-bold text-brand-dark">- David L.</p>
+                    </article>
                 </div>
             </div>
+        </section>
 
-            <div id="menu-wine" class="menu-section hidden transition-opacity duration-500">
-                <div class="text-center mb-10">
-                    <h3 class="font-logo text-5xl text-brand-red mb-4">Wine List</h3>
-                    <p class="text-sm text-gray-500 italic">Perfectly paired with our Italian cuisine</p>
-                </div>
-
-                <h4 class="text-2xl font-bold border-b-2 border-brand-green pb-2 mb-6 text-brand-dark">House Wines</h4>
-                <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
-                    <div>
-                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">White / Red / Rose (Glass)</span><span class="font-bold text-brand-red">4,00€</span></div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">White / Red / Rose (1 Litre)</span><span class="font-bold
-
-    <section id="reviews" class="py-20 px-4 bg-gray-50 overflow-hidden">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="font-logo text-4xl text-brand-red mb-12">What Our Guests Say</h2>
-            
-            <div id="review-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8" style="-ms-overflow-style: none; scrollbar-width: none;">
-                <style>#review-carousel::-webkit-scrollbar { display: none; }</style>
-
-                <div class="snap-center shrink-0 w-80 md:w-1/3 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
-                    <p class="text-gray-600 mb-6 italic">"I saw this on TripAdvisor so I took the advice to book. The mixed bruschetta for starters was huge and amazing! The mushroom and truffle topping was spectacular."</p>
-                    <p class="font-bold text-brand-dark">- Polly</p>
-                </div>
-
-                <div class="snap-center shrink-0 w-80 md:w-1/3 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
-                    <p class="text-gray-600 mb-6 italic">"Authentic Italian in Greece. The 24h fermented pizza crust is lightweight and crispy, the best I've had on the island during our holiday."</p>
-                    <p class="font-bold text-brand-dark">- Mark T.</p>
-                </div>
-
-                <div class="snap-center shrink-0 w-80 md:w-1/3 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
-                    <p class="text-gray-600 mb-6 italic">"Great atmosphere and the homemade artisan pasta is out of this world. Excellent hospitality, they gave us limoncello on the house!"</p>
-                    <p class="font-bold text-brand-dark">- Sarah W.</p>
-                </div>
+        <section id="book" class="py-24 px-4 bg-brand-dark">
+            <div class="max-w-6xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
                 
-                <div class="snap-center shrink-0 w-80 md:w-1/3 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
-                    <p class="text-gray-600 mb-6 italic">"Amazing dinner in Pefkos. Authentic ingredients, great wine selection, and the tiramisu was the perfect end to our night."</p>
-                    <p class="font-bold text-brand-dark">- David L.</p>
-                </div>
-            </div>
-
-            <script>
-                const carousel = document.getElementById('review-carousel');
-                setInterval(() => {
-                    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
-                        carousel.scrollTo({ left: 0, behavior: 'smooth' });
-                    } else {
-                        carousel.scrollBy({ left: 340, behavior: 'smooth' });
-                    }
-                }, 4000); // Cambia automáticamente cada 4 segundos
-            </script>
-        </div>
-    </section>
-
-    <section id="book" class="py-24 px-4 bg-brand-dark">
-        <div class="max-w-6xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
-            
-            <div class="md:w-5/12 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
-                <div class="absolute inset-0 bg-brand-dark/85 backdrop-blur-sm"></div>
-                <div class="relative h-full flex flex-col justify-between p-10 text-white min-h-[300px]">
-                    <div>
-                        <h2 class="font-logo text-5xl text-brand-green mb-4">Join Us</h2>
-                        <p class="text-gray-200 text-lg mb-8">Reserve your table and experience the magic of authentic Italian dining under the Pefkos stars.</p>
-                    </div>
-                    <div class="space-y-4">
-                        <p class="flex items-center gap-3"><span class="text-brand-green text-xl">📍</span> Main Road, Pefkos 85107, Rhodes</p>
-                        <p class="flex items-center gap-3"><span class="text-brand-green text-xl">📞</span> +30 2244048244</p>
-                        <p class="flex items-center gap-3"><span class="text-brand-green text-xl">✉️</span> info@peperoncino.gr</p>
+                <div class="md:w-5/12 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                    <div class="absolute inset-0 bg-brand-dark/85 backdrop-blur-sm"></div>
+                    <div class="relative h-full flex flex-col justify-between p-10 text-white min-h-[300px]">
+                        <div>
+                            <h2 class="font-logo text-5xl text-brand-green mb-4">Join Us</h2>
+                            <p class="text-gray-200 text-lg mb-8">Reserve your table and experience the magic of authentic Italian dining under the Pefkos stars.</p>
+                        </div>
+                        <address class="space-y-4 not-italic">
+                            <p class="flex items-center gap-3"><span class="text-brand-green text-xl" aria-hidden="true">📍</span> Main Road, Pefkos 85107, Rhodes</p>
+                            <p class="flex items-center gap-3"><span class="text-brand-green text-xl" aria-hidden="true">📞</span> <a href="tel:+302244048244" class="hover:underline">+30 2244048244</a></p>
+                            <p class="flex items-center gap-3"><span class="text-brand-green text-xl" aria-hidden="true">✉️</span> <a href="mailto:info@peperoncino.gr" class="hover:underline">info@peperoncino.gr</a></p>
+                        </address>
                     </div>
                 </div>
+
+                <div class="md:w-7/12 p-8 md:p-12">
+                    <h3 class="text-3xl font-bold mb-6 text-brand-dark border-b-2 border-brand-green pb-2 inline-block">Request a Table</h3>
+                    
+                    <form id="reservation-form" class="space-y-5 mt-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label for="fullName" class="block text-sm font-semibold text-gray-600 mb-1">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-gray-600 mb-1">Email Address *</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-semibold text-gray-600 mb-1">Mobile / WhatsApp *</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition">
+                            </div>
+                            <div>
+                                <label for="guests" class="block text-sm font-semibold text-gray-600 mb-1">Number of Guests *</label>
+                                <input type="number" id="guests" name="guests" min="1" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition">
+                            </div>
+                            <div>
+                                <label for="date" class="block text-sm font-semibold text-gray-600 mb-1">Date *</label>
+                                <input type="date" id="date" name="date" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition text-gray-500">
+                            </div>
+                            <div>
+                                <label for="time" class="block text-sm font-semibold text-gray-600 mb-1">Time *</label>
+                                <input type="time" id="time" name="time" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition text-gray-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="seating" class="block text-sm font-semibold text-gray-600 mb-1">Seating Preference</label>
+                            <select id="seating" name="seating" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition text-gray-600">
+                                <option value="outdoor">Outdoor / Terrace</option>
+                                <option value="indoor">Indoor</option>
+                                <option value="any">No Preference</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="requests" class="block text-sm font-semibold text-gray-600 mb-1">Special Requests / Allergies</label>
+                            <textarea id="requests" name="requests" rows="2" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition" placeholder="Let us know if you have any dietary restrictions..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-red text-white py-4 rounded-xl font-bold text-lg hover:bg-red-700 hover:shadow-lg transition mt-2">
+                            Confirm Reservation Request
+                        </button>
+                    </form>
+                </div>
             </div>
-
-            <div class="md:w-7/12 p-8 md:p-12">
-                <h3 class="text-3xl font-bold mb-6 text-brand-dark border-b-2 border-brand-green pb-2 inline-block">Request a Table</h3>
-                
-                <form class="space-y-5 mt-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-600 mb-1">Full Name *</label>
-                            <input type="text" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-600 mb-1">Email Address *</label>
-                            <input type="email" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-600 mb-1">Mobile / WhatsApp *</label>
-                            <input type="tel" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-600 mb-1">Number of Guests *</label>
-                            <input type="number" min="1" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-600 mb-1">Date *</label>
-                            <input type="date" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition text-gray-500">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-600 mb-1">Time *</label>
-                            <input type="time" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition text-gray-500">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-600 mb-1">Seating Preference</label>
-                        <select class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition text-gray-600">
-                            <option>Outdoor / Terrace</option>
-                            <option>Indoor</option>
-                            <option>No Preference</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-600 mb-1">Special Requests / Allergies</label>
-                        <textarea rows="2" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:bg-white outline-none transition" placeholder="Let us know if you have any dietary restrictions, allergies or special occasions..."></textarea>
-                    </div>
-
-                    <button type="button" onclick="alert('In a real setup, this form processes the request via an API or Email. For instant booking, use WhatsApp!')" class="w-full bg-brand-red text-white py-4 rounded-xl font-bold text-lg hover:bg-red-700 hover:shadow-lg transition mt-2">
-                        Confirm Reservation Request
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="bg-gray-900 text-gray-400 py-6 text-center text-sm">
         <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -303,5 +226,34 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Lógica del Carrusel
+            const carousel = document.getElementById('review-carousel');
+            if (carousel) {
+                setInterval(() => {
+                    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
+                        carousel.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        // Desplazar el ancho exacto de una tarjeta + el gap (aprox 340px)
+                        carousel.scrollBy({ left: 340, behavior: 'smooth' });
+                    }
+                }, 4000);
+            }
+
+            // Manejo del formulario
+            const form = document.getElementById('reservation-form');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault(); // Previene la recarga de la página
+                    
+                    // Aquí iría la lógica de recolección de datos (FormData) y llamada a la API
+                    alert('In a real setup, this form processes the request via an API or Email. For instant booking, use WhatsApp!');
+                    
+                    // Opcional: form.reset();
+                });
+            }
+        });
+    </script>
 </body>
 </html>
