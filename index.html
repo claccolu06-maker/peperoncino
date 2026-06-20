@@ -33,7 +33,7 @@
             <a href="#" class="font-logo text-3xl text-brand-green">Peperoncino</a>
             <nav class="hidden md:flex space-x-8 font-semibold text-gray-600">
                 <a href="#about" class="hover:text-brand-red transition">Philosophy</a>
-                <a href="#menu" class="hover:text-brand-red transition">Menus</a>
+                <a href="#menus" class="hover:text-brand-red transition">Menus</a>
                 <a href="#reviews" class="hover:text-brand-red transition">Reviews</a>
             </nav>
             <a href="#book" class="bg-brand-red text-white px-6 py-2 rounded-full font-bold hover:bg-red-700 transition shadow-lg">
@@ -47,7 +47,7 @@
             <h1 class="font-logo text-6xl md:text-8xl text-brand-green mb-6 drop-shadow-lg">Rustic Italian Restaurant</h1>
             <p class="text-xl md:text-2xl font-light mb-10 text-gray-200 drop-shadow-md">Experience the true taste of Italy in the heart of Pefkos.</p>
             <div class="flex justify-center gap-4">
-                <a href="#menu" class="bg-white/90 backdrop-blur text-brand-dark px-8 py-3 rounded-full font-bold hover:bg-white transition shadow-lg">View Menus</a>
+                <a href="#menus" class="bg-white/90 backdrop-blur text-brand-dark px-8 py-3 rounded-full font-bold hover:bg-white transition shadow-lg">View Menus</a>
                 <a href="#book" class="bg-brand-red text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition shadow-lg">Reserve Now</a>
             </div>
         </div>
@@ -67,24 +67,23 @@
         </div>
     </section>
 
-    <section id="menu" class="py-20 px-4 bg-white">
+    <section id="menus" class="pt-20 px-4 bg-white">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="font-logo text-4xl text-brand-red mb-4">Our Menus</h2>
-            <p class="text-gray-500 mb-6 italic">Discover our authentic selections</p>
-            <p class="text-sm text-gray-400 mb-16 max-w-2xl mx-auto">As all our dishes are made fresh to order, we kindly ask our customers for patience during busy times. Your wait is rewarded with rigorous quality.</p>
+            <p class="text-gray-500 mb-6 italic">Select a category below to explore our authentic flavors</p>
             
-            <div class="grid md:grid-cols-3 gap-8 items-center">
+            <div class="grid md:grid-cols-3 gap-8 items-center mb-16">
                 
-                <div class="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                <div onclick="showMenu('menu-drinks')" class="cursor-pointer bg-gray-50 rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
                     <div class="h-48 bg-gray-200 rounded-xl mb-6 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Desserts" class="w-full h-full object-cover">
                     </div>
                     <h3 class="font-logo text-3xl text-brand-dark mb-3">Dolci & Drinks</h3>
-                    <p class="text-gray-600 mb-6 text-sm px-2">Sweet Italian treats, homemade tiramisu, refreshing cocktails, and traditional digestifs to conclude your dinner.</p>
-                    <a href="menu (1).pdf" target="_blank" class="inline-block border-2 border-brand-green text-brand-green font-bold py-2 px-8 rounded-full hover:bg-brand-green hover:text-white transition">View Drinks</a>
+                    <p class="text-gray-600 mb-6 text-sm px-2">Sweet Italian treats, homemade tiramisu, and traditional digestifs.</p>
+                    <span class="inline-block border-2 border-brand-green text-brand-green font-bold py-2 px-8 rounded-full transition">View Drinks</span>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-2xl border-2 border-brand-red/10 p-8 transform md:-translate-y-6 hover:-translate-y-8 transition duration-300 relative z-10">
+                <div onclick="showMenu('menu-food')" class="cursor-pointer bg-white rounded-2xl shadow-2xl border-2 border-brand-red/10 p-8 transform md:-translate-y-6 hover:-translate-y-8 transition duration-300 relative z-10">
                     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-red text-white px-6 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">
                         Main Selection
                     </div>
@@ -92,22 +91,94 @@
                         <img src="https://images.unsplash.com/photo-1498579150354-97947de1d3b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Food Menu" class="w-full h-full object-cover">
                     </div>
                     <h3 class="font-logo text-4xl text-brand-red mb-3">Food Menu</h3>
-                    <p class="text-gray-600 mb-8 px-4">Our famous 24h fermented artisan pizzas, traditional bronze-die pastas, and premium selection of meat and fresh seafood.</p>
-                    <a href="menu (1).pdf" target="_blank" class="inline-block bg-brand-red text-white font-bold py-3 px-10 rounded-full hover:bg-red-700 transition shadow-lg w-full text-center">Explore Food</a>
+                    <p class="text-gray-600 mb-8 px-4">Our famous 24h fermented pizzas and traditional bronze-die pastas.</p>
+                    <span class="inline-block bg-brand-red text-white font-bold py-3 px-10 rounded-full transition shadow-lg w-full text-center">Explore Food</span>
                 </div>
 
-                <div class="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                <div onclick="showMenu('menu-wine')" class="cursor-pointer bg-gray-50 rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
                     <div class="h-48 bg-gray-200 rounded-xl mb-6 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Wine List" class="w-full h-full object-cover">
                     </div>
                     <h3 class="font-logo text-3xl text-brand-dark mb-3">Wine List</h3>
-                    <p class="text-gray-600 mb-6 text-sm px-2">A curated collection of fine Italian regional wines and local Greek labels paired carefully to enhance your meal.</p>
-                    <a href="menu_vini.pdf" target="_blank" class="inline-block border-2 border-brand-green text-brand-green font-bold py-2 px-8 rounded-full hover:bg-brand-green hover:text-white transition">Wine List</a>
+                    <p class="text-gray-600 mb-6 text-sm px-2">A curated collection of fine Italian regional wines and local Greek labels.</p>
+                    <span class="inline-block border-2 border-brand-green text-brand-green font-bold py-2 px-8 rounded-full transition">Wine List</span>
                 </div>
 
             </div>
         </div>
     </section>
+
+    <section id="interactive-menu" class="pb-20 px-4 bg-white scroll-mt-24">
+        <div class="max-w-5xl mx-auto bg-gray-50 p-8 md:p-12 rounded-3xl border border-gray-100 shadow-inner">
+            
+            <div id="menu-food" class="menu-section block transition-opacity duration-500">
+                <div class="text-center mb-10">
+                    <h3 class="font-logo text-5xl text-brand-red mb-4">Food Menu</h3>
+                    <p class="text-sm text-gray-500 italic">As all our dishes are made fresh to order, we kindly ask for your patience.</p>
+                </div>
+                
+                <h4 class="text-2xl font-bold border-b-2 border-brand-green pb-2 mb-6 text-brand-dark">Le Pizze</h4>
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
+                    <div>
+                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Margherita</span><span class="font-bold text-brand-red">12,00€</span></div>
+                        <p class="text-sm text-gray-500 italic">tomato, mozzarella, basil</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Romana</span><span class="font-bold text-brand-red">13,00€</span></div>
+                        <p class="text-sm text-gray-500 italic">tomato, mozzarella, anchovies, capers, olives, oregano</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Prosciutto</span><span class="font-bold text-brand-red">14,00€</span></div>
+                        <p class="text-sm text-gray-500 italic">tomato, mozzarella, ham</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Funghi</span><span class="font-bold text-brand-red">14,00€</span></div>
+                        <p class="text-sm text-gray-500 italic">tomato, mozzarella, fresh mushrooms</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Vegetariana</span><span class="font-bold text-brand-red">15,00€</span></div>
+                        <p class="text-sm text-gray-500 italic">tomatoes, mozzarella, courgette, eggplant, peppers, onions</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">4 Formaggi</span><span class="font-bold text-brand-red">15,00€</span></div>
+                        <p class="text-sm text-gray-500 italic">mozzarella, gorgonzola, parmesan, edam</p>
+                    </div>
+                </div>
+
+                <h4 class="text-2xl font-bold border-b-2 border-brand-green pb-2 mb-6 text-brand-dark mt-8">Pasta Artigianale</h4>
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-6">
+                    <div>
+                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Tagliolini Aglio, Olio e Peperoncino</span><span class="font-bold text-brand-red">12,00€</span></div>
+                        <p class="text-sm text-gray-500 italic">tomato, garlic, chili, parmesan</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Tagliolini Carbonara</span><span class="font-bold text-brand-red">15,00€</span></div>
+                        <p class="text-sm text-gray-500 italic">guanciale, egg, pecorino romano, black pepper</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Gnocchi con Gamberi e Tartufo</span><span class="font-bold text-brand-red">20,00€</span></div>
+                        <p class="text-sm text-gray-500 italic">prawns, parmesan cream, saffron, truffle</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">Ravioli di Pesce</span><span class="font-bold text-brand-red">20,00€</span></div>
+                        <p class="text-sm text-gray-500 italic">fish ravioli with zucchini, shrimps, cherry tomato</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="menu-wine" class="menu-section hidden transition-opacity duration-500">
+                <div class="text-center mb-10">
+                    <h3 class="font-logo text-5xl text-brand-red mb-4">Wine List</h3>
+                    <p class="text-sm text-gray-500 italic">Perfectly paired with our Italian cuisine</p>
+                </div>
+
+                <h4 class="text-2xl font-bold border-b-2 border-brand-green pb-2 mb-6 text-brand-dark">House Wines</h4>
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
+                    <div>
+                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">White / Red / Rose (Glass)</span><span class="font-bold text-brand-red">4,00€</span></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-end border-b border-gray-300 border-dotted pb-1 mb-1"><span class="font-bold text-lg">White / Red / Rose (1 Litre)</span><span class="font-bold
 
     <section id="reviews" class="py-20 px-4 bg-gray-50 overflow-hidden">
         <div class="max-w-6xl mx-auto text-center">
